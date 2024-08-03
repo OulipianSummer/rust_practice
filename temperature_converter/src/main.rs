@@ -53,10 +53,10 @@ fn convert_temp(command: String, temp: f32) {
 
     if command == "c2f" { // Convert from Celsius to Farenheit.
         let result = (temp * 1.8) + 32.0;
-        println!("Result: {temp}°C = {:.2}°F", result);
+        println!("Result: {temp:.2}°C = {result:.2}°F");
     } else if command == "f2c" { // Convert from Farenheit to Celcius.
        let result = (temp - 32.0) / 1.8;
-       println!("Result: {temp}°F = {:.2}°C", result);
+       println!("Result: {temp:.2}°F = {result:.2}°C");
     } else { // Print the error message since we didn't get the correct inputs.
         print_usage_error();
     }
