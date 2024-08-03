@@ -5,20 +5,26 @@ fn main() {
 
     // Collect CLI args.
     let args: Vec<String> = env::args().collect();
+
+    // Make sure we receive exactly one argument.
+    if args.len() != 2 {
+        print_error_msg();
+        process::exit(1);
+    }
         
     // Assign the user-provided arg to an integer. Allow negatives at first so parse doesn't panic.
     let n: i32  = match &args[1].parse() {
         Ok(num) => *num,
         Err(_) => {
             print_error_msg();
-            process::exit(1);
+            process::exit(2);
         }
     };
 
-    // Don't allow negative numbers.
-    if n < 0 {
+    // Don't allow negative numbers or 0.
+    if n <= 0 {
         print_error_msg();
-        process::exit(2);
+        process::exit(3);
     }
 
     // Create the starter sequence.
