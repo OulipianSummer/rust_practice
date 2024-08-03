@@ -1,0 +1,7 @@
+[package]
+name = "xmas_song_loop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ordinal = "0.3.1"
